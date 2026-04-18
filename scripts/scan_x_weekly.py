@@ -16,6 +16,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -758,6 +759,12 @@ def main() -> None:
 
     outdir = Path(args.outdir).expanduser().resolve()
     outdir.mkdir(parents=True, exist_ok=True)
+
+    chrome_profile = os.environ.get("OPENCLI_CHROME_PROFILE", "")
+    if chrome_profile:
+        log(f"chrome profile: {chrome_profile} (from OPENCLI_CHROME_PROFILE)")
+    elif args.discover_backend in ("auto", "opencli-google", "opencli-twitter", "opencli"):
+        log("warn: OPENCLI_CHROME_PROFILE not set — make sure the Browser Bridge extension is active in the intended Chrome profile")
 
     log(
         f"starting scan: accounts={len(handles)} days={args.days} "
