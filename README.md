@@ -1,10 +1,12 @@
 # AI影响力信息汇总（ai-influence-digest）
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 把「刷一周 X」变成可复用的内容雷达流水线：
 - 批量扫描指定 X 账号过去 7 天推文（工具/工作流/教程/Prompt）
-- 过滤出对内容创作者“立刻可用”的高价值内容
+- 过滤出对内容创作者”立刻可用”的高价值内容
 - 产出结构化中文周报 Markdown
-- 一键生成多页截图海报（便于发 Telegram / 知识星球 / Notion）
+- 一键生成截图海报（便于发 Telegram / 知识星球 / Notion）
 
 ## ✅ 前提与约束（强制）
 - **绝对禁止使用 X API**（包括任何 X API 搜索/时间线拉取）。
@@ -123,5 +125,17 @@ python3 scripts/render_poster.py \
 
 模板文件位于 `scripts/poster_template.html`，可自行修改样式。
 
+## Star 增长
+
+[![Star History Chart](https://api.star-history.com/svg?repos=koffuxu/ai-influence-digest&type=Date)](https://star-history.com/#koffuxu/ai-influence-digest&Date)
+
 ## 作者
-- X：https://x.com/koffuxu
+
+| 平台 | 链接 |
+|---|---|
+| X（Twitter） | [@koffuxu](https://x.com/koffuxu) |
+| 微信公众号 | 可夫小子 |
+
+## License
+
+[MIT](LICENSE)
