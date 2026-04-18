@@ -96,18 +96,22 @@ python3 scripts/scan_x_weekly.py \
   - Tweet Link：必须是原始推文 URL
 
 ### 3) 生成周报截图（发布物阶段）
-把最终周报 Markdown 渲染成多页截图（默认小红书文字海报风格，适合发 TG/星球）。
+把最终周报 Markdown 渲染成**一张**完整长图（小红书文字海报风格，适合发 TG/星球）。
+
+截图能力完全内置，无需外部依赖，模板位于 `scripts/poster_template.html`。
 
 ```bash
 bash scripts/render_weekly_screenshots.sh \
   ./output/ai-influence-digest/weekly_report.md \
-  ./output/ai-influence-digest/screenshots \
-  "2026年04月15日"
+  ./output/ai-influence-digest/weekly_report.png \
+  "2026年04月18日"
 ```
 
-输出目录会生成 `01.png` `02.png` ...
+输出单张 PNG，路径默认与 Markdown 同目录同名（`.png`）。
 
-> 如需独立仓库运行：通过 `SCREENSHOT_GENERATOR_DIR=/path/to/screenshot-generator` 指定截图分页工具，避免依赖 OpenClaw 工作区目录结构。
+环境变量：
+- `AUTHOR_NAME`：覆盖作者名（默认"作者"）
+- `AVATAR_URL`：覆盖头像路径或 URL
 
 ## 常见坑
 - X 搜索结果可能混入非目标账号/聚合帖：脚本只保留 `https://x.com/<handle>/status/<id>`，并校验 handle 一致。

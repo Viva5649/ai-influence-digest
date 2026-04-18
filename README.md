@@ -18,7 +18,7 @@
 - `requests`（Python 包，见 `requirements.txt`）
 - `opencli`（默认发现后端，支持 google/twitter search）
 - Chrome + Browser Bridge extension + 已登录 X 的独立浏览器 Profile
-- 可选：`screenshot-generator`（用于把最终周报渲染成多页图片）
+- `jinja2`、`playwright`（用于把最终周报渲染成多页截图，见 `requirements.txt`）
 
 运行环境要求（重要）：
 - 涉及 `opencli` 的发现阶段（`opencli google search` / `opencli twitter search`）必须在系统环境执行，不能在沙箱环境执行。
@@ -29,6 +29,7 @@
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+playwright install chromium
 npm install -g @jackwener/opencli
 ```
 
@@ -42,12 +43,6 @@ npm install -g @jackwener/opencli
 
 ```bash
 export OPENCLI_CHROME_PROFILE=<your-alt-account-profile-name>
-```
-
-如果你要生成截图，建议把 `screenshot-generator` 作为同仓库的 `tools/screenshot-generator`、上级目录的 `tools/screenshot-generator`，或通过环境变量显式指定：
-
-```bash
-export SCREENSHOT_GENERATOR_DIR=/path/to/screenshot-generator
 ```
 
 ## 快速开始
@@ -105,15 +100,28 @@ python3 scripts/scan_x_weekly.py \
 - `./output/ai-influence-digest/weekly_report.md`
 
 ### 3) 生成周报截图（发布物）
-> 这里依赖外部 `screenshot-generator`。脚本会优先查找 `SCREENSHOT_GENERATOR_DIR`，其次查找仓库附近的 `tools/screenshot-generator`。
 
 ```bash
 bash scripts/render_weekly_screenshots.sh \
   ./output/ai-influence-digest/weekly_report.md \
-  ./output/ai-influence-digest/screenshots \
-  "2026年04月15日"
+  ./output/ai-influence-digest/weekly_report.png \
+  "2026年04月18日"
 ```
-会得到：`01.png`、`02.png`…
+
+输出单张完整长图，截图风格为小红书文字海报。
+
+也可以直接调用 Python 脚本（支持更多参数）：
+
+```bash
+python3 scripts/render_poster.py \
+  --md ./output/ai-influence-digest/weekly_report.md \
+  --out ./output/ai-influence-digest/weekly_report.png \
+  --date "2026年04月18日" \
+  --author-name "你的名字" \
+  --avatar-url /path/to/avatar.jpg
+```
+
+模板文件位于 `scripts/poster_template.html`，可自行修改样式。
 
 ## 作者
 - X：https://x.com/koffuxu
