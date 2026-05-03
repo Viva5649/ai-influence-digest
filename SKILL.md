@@ -111,7 +111,6 @@ python3 scripts/scan_x_weekly.py \
     - smtp server: smtp.163.com
     - smtp port: 465
     - 发送方: mrnobody212377@163.com
-    - 授权码: MJuDgf9aHxJFVJTF
 
 **发送后验证：**
 - 检查脚本退出码为 0
