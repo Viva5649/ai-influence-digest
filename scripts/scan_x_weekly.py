@@ -638,7 +638,7 @@ def render_candidates_markdown(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--accounts", default=str(Path(__file__).resolve().parent.parent / "references/accounts_65.txt"))
+    parser.add_argument("--accounts", default=str(Path(__file__).resolve().parent.parent / "references/accounts.txt"))
     parser.add_argument("--seed-urls", default="", help="Optional file with known X status URLs, one per line.")
     parser.add_argument("--days", type=int, default=7)
     parser.add_argument(

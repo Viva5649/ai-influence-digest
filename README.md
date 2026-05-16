@@ -52,7 +52,7 @@ export OPENCLI_CHROME_PROFILE=<your-alt-account-profile-name>
 ### 1) 扫描候选推文（收集）
 ```bash
 python3 scripts/scan_x_weekly.py \
-  --accounts references/accounts_65.txt \
+  --accounts references/accounts.txt \
   --days 7 \
   --outdir ./output/ai-influence-digest
 ```
@@ -78,7 +78,7 @@ python3 scripts/scan_x_weekly.py \
 
 ```bash
 python3 scripts/scan_x_weekly.py \
-  --accounts references/accounts_65.txt \
+  --accounts references/accounts.txt \
   --discover-backend opencli-twitter \
   --fetch-backend oembed \
   --outdir ./output/ai-influence-digest
@@ -88,7 +88,7 @@ python3 scripts/scan_x_weekly.py \
 
 ```bash
 python3 scripts/scan_x_weekly.py \
-  --accounts references/accounts_65.txt \
+  --accounts references/accounts.txt \
   --discover-backend none \
   --seed-urls ./output/ai-influence-digest/seed_urls.txt \
   --fetch-backend oembed \

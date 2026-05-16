@@ -1,4 +1,4 @@
-# 65 top AI sources (X handles)
+# top AI sources (X handles)
 # One handle per line, WITHOUT @
 
 OpenAI
@@ -33,7 +33,7 @@ AndrewYNg
 jeffdean
 drfeifei
 Thom_Wolf
-danielaamodei
+DanielaAmodei
 gdb
 GaryMarcus
 JustinLin610
@@ -66,3 +66,37 @@ zarazhangrui
 nikunj
 danshipper
 adityaag
+garrytan
+kepano
+bcherny
+mattshumer_
+
+yupi996
+Yeuoly1
+AYi_AInotes
+Alexjkman
+wadezone
+LawrenceW_Zen
+longdechen12
+lxfater
+AI_Jasonyu
+wangdefou
+Stanleysobest
+aliromman_
+LuFei6996
+AlchainHust
+Jaden_riku
+PandaTalk8
+dashen_wang
+LunaAI519
+Gorden_Sun
+Khazix0918
+OfficialLoganK
+matanSF
+Saccc_c
+Alex_perception
+op7418
+xingpt
+dotey
+rwayne
+mckaywrigley
